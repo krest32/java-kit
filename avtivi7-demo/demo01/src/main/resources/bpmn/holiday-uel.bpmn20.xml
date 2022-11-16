@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/processdef">
+  <process id="holiday-uel" name="holiday-uel" isExecutable="true">
+    <startEvent id="sid-bfed5e51-f555-472c-8ab5-5d07f3346add"/>
+    <endEvent id="sid-12607533-3a68-4d16-9fe4-04b4d2e938f6"/>
+    <userTask id="sid-9503258d-3a5b-49a9-801d-a54a7b9278c4" name="出差单" activiti:assignee="${assignee0}"/>
+    <userTask id="sid-d6d7e7e7-2a50-4547-8b47-d96e80bde41b" name="部门审核" activiti:assignee="${assignee1}"/>
+    <userTask id="sid-498e20ca-e8b6-48c0-8221-d872a2012c20" name="经理审核" activiti:assignee="${assignee2}"/>
+    <sequenceFlow id="sid-cea507aa-6a5b-473a-97da-e9fecf1be3f1" sourceRef="sid-bfed5e51-f555-472c-8ab5-5d07f3346add" targetRef="sid-9503258d-3a5b-49a9-801d-a54a7b9278c4"/>
+    <sequenceFlow id="sid-9c5f842a-ef4e-4e03-8135-3fda8cdb36bb" sourceRef="sid-9503258d-3a5b-49a9-801d-a54a7b9278c4" targetRef="sid-d6d7e7e7-2a50-4547-8b47-d96e80bde41b"/>
+    <sequenceFlow id="sid-b70bddd0-292c-4578-a213-de58c5da6e53" sourceRef="sid-d6d7e7e7-2a50-4547-8b47-d96e80bde41b" targetRef="sid-498e20ca-e8b6-48c0-8221-d872a2012c20"/>
+    <sequenceFlow id="sid-63f440ec-b708-41c5-a607-1f7a7bd76fbd" sourceRef="sid-498e20ca-e8b6-48c0-8221-d872a2012c20" targetRef="sid-12607533-3a68-4d16-9fe4-04b4d2e938f6"/>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_holiday">
+    <bpmndi:BPMNPlane bpmnElement="holiday" id="BPMNPlane_holiday">
+      <bpmndi:BPMNShape id="shape-d26c5079-4322-47e2-96d5-044c95df73ec" bpmnElement="sid-bfed5e51-f555-472c-8ab5-5d07f3346add">
+        <omgdc:Bounds x="-20.0" y="-155.0" width="30.0" height="30.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape-e0eda3a3-6f8f-43f2-97b8-c6a408a1bece" bpmnElement="sid-12607533-3a68-4d16-9fe4-04b4d2e938f6">
+        <omgdc:Bounds x="-20.0" y="65.0" width="30.0" height="30.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape-203c5fac-3e6f-4c4c-92b9-023401aea20f" bpmnElement="sid-9503258d-3a5b-49a9-801d-a54a7b9278c4">
+        <omgdc:Bounds x="-35.0" y="-100.0" width="60.0" height="30.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape-a0b2f3eb-bbcc-455c-a4ad-ef19755e9065" bpmnElement="sid-d6d7e7e7-2a50-4547-8b47-d96e80bde41b">
+        <omgdc:Bounds x="-32.5" y="-45.0" width="55.0" height="30.000002"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape-385422c0-36ea-40da-adfc-b9698a117943" bpmnElement="sid-498e20ca-e8b6-48c0-8221-d872a2012c20">
+        <omgdc:Bounds x="-32.5" y="10.0" width="55.0" height="30.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="edge-ae53a849-3c78-4384-9d65-1c567e8d6db8" bpmnElement="sid-cea507aa-6a5b-473a-97da-e9fecf1be3f1">
+        <omgdi:waypoint x="-5.0" y="-125.0"/>
+        <omgdi:waypoint x="-5.0" y="-100.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-44c1177f-0072-4625-b2f1-8a536cab6851" bpmnElement="sid-9c5f842a-ef4e-4e03-8135-3fda8cdb36bb">
+        <omgdi:waypoint x="-5.0" y="-70.0"/>
+        <omgdi:waypoint x="-5.0" y="-45.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-5ec61f99-18af-4dd7-a1ad-e65ddcc369a7" bpmnElement="sid-b70bddd0-292c-4578-a213-de58c5da6e53">
+        <omgdi:waypoint x="-5.0" y="-14.999999"/>
+        <omgdi:waypoint x="-5.0" y="10.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-39ab12e7-0982-4ac9-b167-26fcc61c053c" bpmnElement="sid-63f440ec-b708-41c5-a607-1f7a7bd76fbd">
+        <omgdi:waypoint x="-5.0" y="40.0"/>
+        <omgdi:waypoint x="-5.0" y="65.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
