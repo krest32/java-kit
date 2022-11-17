@@ -1,0 +1,12 @@
+server:
+  port: 8002
+
+
+
+spring:
+  redis:
+    host: 127.0.0.1
+
+canal:
+  server: 127.0.0.1:11111 #canal的地址
+  destination: example #默认的数据同步的目的地
